@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# MSN Chatlog Viewer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Simple WebApp that can be used to view old MSN Messenger Chatlogs (in XML format)
 
 ## Available Scripts
 

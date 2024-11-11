@@ -57,7 +57,8 @@ function App() {
                     <InputArea onFileLoad={handleFileLoad} />
                 </div>
             </div>
-            <div className="footer">By <a href="https://jellekralt.com" target="_blank" rel="noreferrer">jellekralt.com</a></div>
+            <div className="footer">
+                By <a href="https://jellekralt.com" target="_blank" rel="noreferrer">jellekralt.com</a> &middot; <a href="https://github.com/jellekralt/msn-viewer" target="_blank" rel="noreferrer">View code on Github</a></div>
         </div>
     );
 }
