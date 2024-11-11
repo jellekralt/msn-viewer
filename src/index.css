@@ -30,6 +30,7 @@ body {
   padding: 8px;
   background: white;
   font-size: 12px;
+  line-break: anywhere;
 }
 
 .footer {
