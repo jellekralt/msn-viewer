@@ -23,3 +23,8 @@ body {
   flex-direction: column;
   margin: 20px auto; /* Centers the chat window */
 }
+
+.footer {
+  text-align: center;
+  font-size: 10px;
+}

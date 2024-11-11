@@ -20,7 +20,6 @@ function App() {
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(xmlData, "text/xml");
         const messagesArray = [];
-        let lastDate = null;
 
         Array.from(xmlDoc.getElementsByTagName("Message")).forEach((msg) => {
             const dateTime = msg.getAttribute("DateTime");
@@ -40,12 +39,15 @@ function App() {
     };
 
     return (
-        <div className="msn-window">
-            <TitleBar chatTitle={chatTitle} />
-            <Toolbar />
-            <WarningBar />
-            <ChatContainer messages={messages} />
-            <InputArea onFileLoad={handleFileLoad} />
+        <div>
+            <div className="msn-window">
+                <TitleBar chatTitle={chatTitle} />
+                <Toolbar />
+                <WarningBar />
+                <ChatContainer messages={messages} />
+                <InputArea onFileLoad={handleFileLoad} />
+            </div>
+            <div className="footer">By <a href="https://jellekralt.com" target="_blank" rel="noreferrer">jellekralt.com</a></div>
         </div>
     );
 }
