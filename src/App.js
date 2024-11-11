@@ -1,14 +1,22 @@
 import React, { useState } from "react";
-import TitleBar from "./components/TitleBar";
-import Toolbar from "./components/Toolbar";
-import WarningBar from "./components/WarningBar";
-import ChatContainer from "./components/ChatContainer";
-import InputArea from "./components/InputArea";
+import TitleBar from "./components/TitleBar/TitleBar";
+import Toolbar from "./components/Toolbar/Toolbar";
+import WarningBar from "./components/WarningBar/WarningBar";
+import ChatContainer from "./components/ChatContainer/ChatContainer";
+import InputArea from "./components/InputArea/InputArea";
+
+const appName = 'MSN Messenger';
 
 function App() {
     const [messages, setMessages] = useState([]);
+    const [chatTitle, setChatTitle] = useState(appName);
 
-    const handleFileLoad = (xmlData) => {
+    const handleFileLoad = (xmlData, filename) => {
+        // Extract username from filename (remove .xml and any trailing numbers)
+        const username = filename.replace(/\.xml$/, "").replace(/\d+$/, "");
+        setChatTitle(`${appName} - ${username}`);
+
+        // Parse XML and set messages
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(xmlData, "text/xml");
         const messagesArray = [];
@@ -20,15 +28,6 @@ function App() {
             const textElement = msg.getElementsByTagName("Text")[0];
 
             if (dateTime && fromUser && textElement) {
-                const messageDate = new Date(dateTime);
-                const messageDateString = messageDate.toLocaleDateString();
-
-                // Add a date divider if the message is from a new day
-                if (lastDate !== messageDateString) {
-                    messagesArray.push({ dateDivider: messageDateString });
-                    lastDate = messageDateString;
-                }
-
                 messagesArray.push({
                     dateTime: dateTime,
                     username: fromUser.getAttribute("FriendlyName"),
@@ -42,7 +41,7 @@ function App() {
 
     return (
         <div className="msn-window">
-            <TitleBar />
+            <TitleBar chatTitle={chatTitle} />
             <Toolbar />
             <WarningBar />
             <ChatContainer messages={messages} />

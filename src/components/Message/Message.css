@@ -1,0 +1,18 @@
+.message {
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.username {
+  color: #0066cc;
+  font-weight: bold;
+}
+
+.emoticon {
+  display: inline-block;
+  width: auto;
+  height: 19px;
+  vertical-align: middle;
+  font-size: 16px;
+  line-height: 1;
+}

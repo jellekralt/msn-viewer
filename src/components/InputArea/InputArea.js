@@ -1,11 +1,12 @@
 import React from "react";
+import "./InputArea.css";
 
 function InputArea({ onFileLoad }) {
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         if (file && file.type === "text/xml") {
             const reader = new FileReader();
-            reader.onload = (e) => onFileLoad(e.target.result);
+            reader.onload = (e) => onFileLoad(e.target.result, file.name);
             reader.readAsText(file);
         } else {
             alert("Please upload a valid XML file.");
@@ -17,7 +18,7 @@ function InputArea({ onFileLoad }) {
         const file = event.dataTransfer.files[0];
         if (file && file.type === "text/xml") {
             const reader = new FileReader();
-            reader.onload = (e) => onFileLoad(e.target.result);
+            reader.onload = (e) => onFileLoad(e.target.result, file.name);
             reader.readAsText(file);
         } else {
             alert("Please upload a valid XML file.");

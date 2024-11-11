@@ -1,6 +1,7 @@
 // src/components/Message.js
 import React from "react";
-import { emojiMap } from "../emojiMap";
+import "./Message.css";
+import { emojiMap } from "../../emojiMap";
 
 // Helper function to replace text with emojis
 function replaceEmojis(text) {

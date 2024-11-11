@@ -1,9 +1,10 @@
 import React from "react";
+import "./TitleBar.css";
 
-function TitleBar() {
+function TitleBar({ chatTitle }) {
     return (
         <div className="title-bar">
-            <span className="window-title">MSN Messenger</span>
+            <span className="window-title">{chatTitle}</span>
             <div className="window-controls">
                 <button className="window-button">_</button>
                 <button className="window-button">□</button>

@@ -1,0 +1,20 @@
+.toolbar {
+  padding: 4px;
+  background: linear-gradient(to bottom, #ffffff 0%, #f0f8ff 100%);
+  border-bottom: 1px solid #99b4d1;
+  display: flex;
+  gap: 4px;
+}
+
+.toolbar-button {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  padding: 2px;
+}
+
+.toolbar-button:hover {
+  background: #e3efff;
+  border-radius: 3px;
+}

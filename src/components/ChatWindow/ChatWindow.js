@@ -1,5 +1,5 @@
 import React from "react";
-import Message from "./Message";
+import Message from "../Message/Message";
 
 function ChatWindow({ messages }) {
     let lastDate = null;

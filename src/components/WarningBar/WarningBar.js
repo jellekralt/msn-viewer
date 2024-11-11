@@ -1,4 +1,5 @@
 import React from "react";
+import "./WarningBar.css";
 
 function WarningBar() {
     return (
