@@ -11,13 +11,14 @@
 }
 
 .file-label {
-  padding: 4px 16px;
+  padding: 6px 16px;
   background: linear-gradient(to bottom, #ffffff 0%, #e3efff 50%, #d9e7ff 51%, #d9e7ff 100%);
   border: 1px solid #99b4d1;
   border-radius: 3px;
   font-size: 12px;
   color: #000;
   cursor: pointer;
+  text-align: center;
 }
 
 .file-name {

@@ -12,16 +12,24 @@ body {
 
 /* MSN Messenger Window Structure */
 .msn-window {
-  width: 100%; 
-  max-width: 800px; /* Limits the width on larger screens */
-  height: 80vh; /* Sets height to 80% of viewport height */
+  width: 100%;
+  max-width: 600px;
+  height: 80vh;
   background: #f0f8ff;
   border: 1px solid #99b4d1;
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  margin: 20px auto; /* Centers the chat window */
+  margin: 20px auto;
+}
+
+.chat-container {
+  flex-grow: 1; /* Allows the chat container to take up available space */
+  overflow-y: auto;
+  padding: 8px;
+  background: white;
+  font-size: 12px;
 }
 
 .footer {

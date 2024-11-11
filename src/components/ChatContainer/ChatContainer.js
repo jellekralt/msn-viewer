@@ -22,7 +22,7 @@ function ChatContainer({ messages }) {
                         <React.Fragment key={index}>
                             {showDateDivider && (
                                 <div className="date-separator">
-                                    {messageDateString}
+                                    <span className="text">{messageDateString}</span>
                                 </div>
                             )}
                             <Message

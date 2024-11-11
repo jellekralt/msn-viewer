@@ -4,12 +4,14 @@ import Toolbar from "./components/Toolbar/Toolbar";
 import WarningBar from "./components/WarningBar/WarningBar";
 import ChatContainer from "./components/ChatContainer/ChatContainer";
 import InputArea from "./components/InputArea/InputArea";
+import LastMessage from "./components/LastMessage/LastMessage";
 
 const appName = 'MSN Messenger';
 
 function App() {
     const [messages, setMessages] = useState([]);
     const [chatTitle, setChatTitle] = useState(appName);
+    const [lastMessageDate, setLastMessageDate] = useState(null);
 
     const handleFileLoad = (xmlData, filename) => {
         // Extract username from filename (remove .xml and any trailing numbers)
@@ -35,6 +37,11 @@ function App() {
             }
         });
 
+        // Set the last message's date if there are messages
+        if (messagesArray.length > 0) {
+            setLastMessageDate(messagesArray[messagesArray.length - 1].dateTime);
+        }
+
         setMessages(messagesArray);
     };
 
@@ -45,7 +52,10 @@ function App() {
                 <Toolbar />
                 <WarningBar />
                 <ChatContainer messages={messages} />
-                <InputArea onFileLoad={handleFileLoad} />
+                <LastMessage lastMessageDate={lastMessageDate} />
+                <div className="input-section"> 
+                    <InputArea onFileLoad={handleFileLoad} />
+                </div>
             </div>
             <div className="footer">By <a href="https://jellekralt.com" target="_blank" rel="noreferrer">jellekralt.com</a></div>
         </div>
