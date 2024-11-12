@@ -14,7 +14,7 @@ function ChatContainer({ messages }) {
                     const isValidDate = !isNaN(messageDate); // Check for valid date
                     if (!isValidDate) return null; // Skip rendering if date is invalid
 
-                    const messageDateString = messageDate.toLocaleDateString();
+                    const messageDateString = messageDate.toLocaleDateString(window.navigator.language);
                     const showDateDivider = lastDate !== messageDateString;
                     lastDate = messageDateString;
 

@@ -23,7 +23,7 @@ function replaceEmojis(text) {
 }
 
 function Message({ username, text, dateTime }) {
-    const messageDate = new Date(dateTime).toLocaleString();
+    const messageDate = new Date(dateTime).toLocaleString(window.navigator.language);
     return (
         <div className="message" title={messageDate}>
             <span className="username">{username} says:</span>
