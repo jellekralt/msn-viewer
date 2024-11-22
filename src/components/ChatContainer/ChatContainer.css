@@ -30,22 +30,3 @@
   position: relative;
   padding: 0 10px;
 }
-
-/* .date-separator {
-  text-align: center;
-  margin: 10px 0;
-  font-size: 12px;
-  color: #666;
-  position: relative;
-}
-
-.date-separator::before,
-.date-separator::after {
-  content: '';
-  display: inline-block;
-  width: 39%;
-  height: 1px;
-  background-color: #99b4d1;
-  vertical-align: middle;
-  margin: 0 10px;
-} */
